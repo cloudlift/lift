@@ -14,7 +14,7 @@ jobs:
   pool:
     vmImage: $(imageName)
   variables:
-    GOROOT: '/opt/hostedtoolcache/go/1.12.6/x64' # Go installation path
+    GOROOT: '/opt/hostedtoolcache/go/1.13/x64' # Go installation path
     GOBIN:  '$(GOPATH)/bin' # Go binaries path
     GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
     modulePath: '$(build.repository.name)' # Path to the module's code
@@ -23,7 +23,7 @@ jobs:
   steps:
   - task: GoTool@0
     inputs:
-      version: 1.12.6
+      version: 1.13
       goPath:  '$(GOPATH)'
       goBin: '$(GOBIN)'
 
@@ -41,7 +41,7 @@ jobs:
     inputs:
       targetType: filePath
       filePath: ./hack/install-linters.sh
-      arguments: v1.17.1 #Fix version of linters to avoid unexpected failures
+      arguments: v1.18.0 #Fix version of linters to avoid unexpected failures
     displayName: Install golangci-lint tool
 
   - bash: |

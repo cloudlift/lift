@@ -30,7 +30,7 @@ parse_args() {
     esac
   done
   shift $((OPTIND - 1))
-  TAG=$1
+  TAG=${1:-v1.18.0}
 }
 # this function wraps all the destructive operations
 # if a curl|bash cuts off the end of the script due to
