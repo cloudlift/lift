@@ -112,10 +112,7 @@ func unpack(zipContents []byte, targetPath string) error {
 		}
 		defer zippedFile.Close()
 
-		extractedFilePath := filepath.Join(
-			targetPath,
-			file.Name,
-		)
+		extractedFilePath := filepath.Join(targetPath, file.Name)
 
 		// Extract the item (or create directory)
 		if file.FileInfo().IsDir() {

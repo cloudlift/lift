@@ -173,6 +173,7 @@ issues:
       linters:
         - errcheck
         - maligned
+        - funlen
 
   # Independently from option `exclude` we use default exclude patterns,
   # it can be disabled by this option. To list all
@@ -187,4 +188,4 @@ issues:
   max-same-issues: 0
 
 service:
-  golangci-lint-version: 1.17.x # use the fixed version to not introduce new linters unexpectedl
+  golangci-lint-version: 1.18.x # use the fixed version to not introduce new linters unexpectedl
